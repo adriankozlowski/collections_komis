@@ -1,5 +1,7 @@
 package pl.sda.model;
 
+import pl.sda.csvUtils.CsvLine;
+
 public class Vehicle {
     private String id;
     private String vin;
@@ -63,6 +65,39 @@ public class Vehicle {
         this.consumption = consumption;
         this.tankVolume = tankVolume;
         this.powerWeightRatio = powerWeightRatio;
+    }
+
+    public Vehicle(CsvLine csvLine) {
+        this.id = csvLine.get(1);
+        this.vin = csvLine.get(2);
+        this.value = csvLine.get(3);
+        this.mark = csvLine.get(4);
+        this.model = csvLine.get(5);
+        this.chassis = csvLine.get(6);
+        this.typ = csvLine.get(7);
+        this.engine = csvLine.get(8);
+        this.injectionType = csvLine.get(9);
+        this.engineCode = csvLine.get(10);
+        this.productionYear = csvLine.get(11);
+        this.cylindersValves = csvLine.get(12);
+        this.volume = csvLine.get(13);
+        this.power = csvLine.get(14);
+        this.momentum = csvLine.get(15);
+        this.timing = csvLine.get(16);
+        this.exaustFilter = csvLine.get(17);
+        this.transmission = csvLine.get(18);
+        this.driveAxis = csvLine.get(19);
+        this.breaks = csvLine.get(20);
+        this.suspensionFront = csvLine.get(21);
+        this.suspensionRear = csvLine.get(22);
+        this.selfWeight = csvLine.get(23);
+        this.chassisDimension = csvLine.get(24);
+        this.trunkVolume = csvLine.get(25);
+        this.acceleration = csvLine.get(26);
+        this.vMax = csvLine.get(27);
+        this.consumption = csvLine.get(28);
+        this.tankVolume = csvLine.get(29);
+        this.powerWeightRatio = csvLine.get(30);
     }
 
     public String getId() {

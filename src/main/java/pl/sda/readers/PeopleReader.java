@@ -9,6 +9,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class PeopleReader {
+
     public List<Person> read(CsvFile file) throws IOException {
         List<Person> people = new LinkedList<>();
         List<CsvLine> csvLines = file.readFile();
