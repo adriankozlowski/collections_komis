@@ -1,33 +1,22 @@
 package pl.sda;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import pl.sda.csvUtils.CsvFile;
+import pl.sda.model.Person;
+import pl.sda.readers.PeopleReader;
+
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
 public class KomisApplication {
 
-    /**
-     * MEtoda odczytuje osoby z pliku do kolekcji stringów
-     *
-     * @return
-     */
-    public List<String> readFile(String filePath) throws IOException {
-        BufferedReader bufferedReader = null;
+    public List<Person> getPersonCollection() {
         try {
-            bufferedReader = new BufferedReader(new FileReader(filePath));
-            List<String> list = new LinkedList<String>();
-            String line = null;
-            while ((line = bufferedReader.readLine()) != null) {
-                list.add(line);
-            }
-            return list;
-        } catch (FileNotFoundException e) {
-            throw e;
-        } finally {
-            bufferedReader.close();
+            return new PeopleReader()
+                    .read(new CsvFile("src/main/resource/people1.csv"));
+        } catch (IOException e) {
+            return new LinkedList<>();
         }
     }
+
 }

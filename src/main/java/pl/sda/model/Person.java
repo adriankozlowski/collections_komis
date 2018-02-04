@@ -1,5 +1,7 @@
 package pl.sda.model;
 
+import pl.sda.csvUtils.CsvLine;
+
 import java.time.LocalDate;
 
 public class Person {
@@ -17,6 +19,15 @@ public class Person {
         this.sex = sex;
         this.dob = dob;
         this.pesel = pesel;
+    }
+
+    public Person(CsvLine csvLine) {
+        this.id = Integer.valueOf(csvLine.get(0));
+        this.name = csvLine.get(1);
+        this.lastName = csvLine.get(2);
+        this.sex = csvLine.get(3);
+        this.dob = LocalDate.parse(csvLine.get(4));
+        this.pesel = csvLine.get(5);
     }
 
     public Integer getId() {

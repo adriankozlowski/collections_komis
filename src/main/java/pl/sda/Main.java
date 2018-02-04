@@ -16,8 +16,8 @@ public class Main {
 //        unZipResources();
         KomisApplication komisApplication = new KomisApplication();
         try {
-            List<String> people = komisApplication.readFile();
-            List<String> vehicles = komisApplication.readVehicles();
+            List<String> people = komisApplication.readFile("src/main/resources/people1.csv");
+            List<String> vehicles = komisApplication.readFile("src/main/resources/vehicle.csv");
 
             System.out.println("people size: " + people.size());
             System.out.println("vehicle size: " + vehicles.size());
