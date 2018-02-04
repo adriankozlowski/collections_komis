@@ -14,8 +14,8 @@ public class VehicleReader {
         List<Vehicle> vehicles = new LinkedList<>();
         List<CsvLine> csvLines = file.readFile();
         for (CsvLine csvLine : csvLines) {
-            Vehicle vehicle = new Vehicle(csvLine);
-            vehicles.add(vehicle);
+//            Vehicle vehicle = new Vehicle(csvLine);
+//            vehicles.add(vehicle);
         }
 
         return vehicles;

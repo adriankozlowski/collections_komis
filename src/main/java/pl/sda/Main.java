@@ -1,7 +1,6 @@
 package pl.sda;
 
 import pl.sda.model.Person;
-import pl.sda.model.Vehicle;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -10,6 +9,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
@@ -19,13 +19,18 @@ public class Main {
 //        unZipResources();
         KomisApplication komisApplication = new KomisApplication();
         List<Person> people = komisApplication.getPersonCollection();
-        List<Vehicle> vehiclesCollection = komisApplication.getVehiclesCollection();
+//        List<Vehicle> vehiclesCollection = komisApplication.getVehiclesCollection();
 
 
-        people.stream().forEach(System.out::println);
+        List<Person> ewa = people.stream()
+                .filter(person -> person.getName().equals("Ewa"))
+                .collect(Collectors.toList());
+
 
 
     }
+
+
     /**
      * Unzip it
      *

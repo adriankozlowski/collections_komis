@@ -75,4 +75,9 @@ public class Person {
     public void setPesel(String pesel) {
         this.pesel = pesel;
     }
+
+    @Override
+    public String toString() {
+        return id + " /" + name + " " + lastName + " /" + dob + " /" + pesel;
+    }
 }

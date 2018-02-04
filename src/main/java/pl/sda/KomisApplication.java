@@ -21,6 +21,10 @@ public class KomisApplication {
         }
     }
 
+    public void format(Person person) {
+        System.out.printf("%10s %10s %s %s %s", person.getId(), person.getName(), person.getLastName(), person.getDob(), person.getPesel());
+    }
+
     public List<Vehicle> getVehiclesCollection() {
         try {
             return new VehicleReader()

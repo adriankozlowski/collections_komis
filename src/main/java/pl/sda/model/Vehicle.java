@@ -68,7 +68,7 @@ public class Vehicle {
     }
 
     public Vehicle(CsvLine csvLine) {
-        this.id = csvLine.get(1);
+        this.id = csvLine.get(0);
         this.vin = csvLine.get(2);
         this.value = csvLine.get(3);
         this.mark = csvLine.get(4);
