@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
@@ -13,7 +14,17 @@ public class Main {
 
     public static void main(String[] args) {
 //        unZipResources();
-        new KomisApplication();
+        KomisApplication komisApplication = new KomisApplication();
+        try {
+            List<String> people = komisApplication.readPeople();
+            List<String> vehicles = komisApplication.readVehicles();
+
+            System.out.println("people size: " + people.size());
+            System.out.println("vehicle size: " + vehicles.size());
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     /**
      * Unzip it
