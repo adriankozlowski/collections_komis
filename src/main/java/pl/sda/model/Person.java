@@ -2,6 +2,9 @@ package pl.sda.model;
 
 import pl.sda.csvUtils.CsvLine;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Person {
     private String id;
     private String name;
@@ -9,6 +12,7 @@ public class Person {
     private String sex;
     private String dob;
     private String pesel;
+    private List<Vehicle> vehicles;
 
     public Person(String id, String name, String lastName, String sex, String dob, String pesel) {
         this.id = id;
@@ -17,6 +21,21 @@ public class Person {
         this.sex = sex;
         this.dob = dob;
         this.pesel = pesel;
+    }
+
+    public List<Vehicle> getVehicles() {
+        return vehicles;
+    }
+
+    public void setVehicles(List<Vehicle> vehicles) {
+        this.vehicles = vehicles;
+    }
+
+    public void add(Vehicle vehicle) {
+        if (vehicles == null) {
+            vehicles = new ArrayList<>();
+        }
+        vehicles.add(vehicle);
     }
 
     public Person(CsvLine csvLine) {

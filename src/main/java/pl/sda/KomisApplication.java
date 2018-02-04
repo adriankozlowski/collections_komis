@@ -35,16 +35,7 @@ public class KomisApplication {
     }
 
     public boolean validatePerson(Person person) {
-        if (person.getName().isEmpty())
-            return false;
-        if (person.getLastName().isEmpty())
-            return false;
-        if (!(person.getName().endsWith("a") && person.getSex().equals("F"))) {
-            return false;
-        }
-        if (!validatePesel(person.getPesel(), person.getDob())) {
-            return false;
-        }
+
         return true;
     }
 
