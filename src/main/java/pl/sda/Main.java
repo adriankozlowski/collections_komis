@@ -12,7 +12,7 @@ import java.util.zip.ZipInputStream;
 public class Main {
 
     public static void main(String[] args) {
-        unZipResources();
+//        unZipResources();
         new KomisApplication();
     }
     /**
