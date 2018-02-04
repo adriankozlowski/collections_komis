@@ -18,8 +18,12 @@ public class Main {
     public static void main(String[] args) {
 //        unZipResources();
         KomisApplication komisApplication = new KomisApplication();
-        List<Person> personCollection = komisApplication.getPersonCollection();
+        List<Person> people = komisApplication.getPersonCollection();
         List<Vehicle> vehiclesCollection = komisApplication.getVehiclesCollection();
+
+
+        people.stream().forEach(System.out::println);
+
 
     }
     /**

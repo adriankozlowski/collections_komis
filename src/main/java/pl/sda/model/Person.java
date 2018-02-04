@@ -2,17 +2,15 @@ package pl.sda.model;
 
 import pl.sda.csvUtils.CsvLine;
 
-import java.time.LocalDate;
-
 public class Person {
-    private Integer id;
+    private String id;
     private String name;
     private String lastName;
     private String sex;
-    private LocalDate dob;
+    private String dob;
     private String pesel;
 
-    public Person(Integer id, String name, String lastName, String sex, LocalDate dob, String pesel) {
+    public Person(String id, String name, String lastName, String sex, String dob, String pesel) {
         this.id = id;
         this.name = name;
         this.lastName = lastName;
@@ -22,19 +20,19 @@ public class Person {
     }
 
     public Person(CsvLine csvLine) {
-        this.id = Integer.valueOf(csvLine.get(0));
+        this.id = csvLine.get(0);
         this.name = csvLine.get(1);
         this.lastName = csvLine.get(2);
         this.sex = csvLine.get(3);
-        this.dob = LocalDate.parse(csvLine.get(4));
+        this.dob = csvLine.get(4);
         this.pesel = csvLine.get(5);
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -62,11 +60,11 @@ public class Person {
         this.sex = sex;
     }
 
-    public LocalDate getDob() {
+    public String getDob() {
         return dob;
     }
 
-    public void setDob(LocalDate dob) {
+    public void setDob(String dob) {
         this.dob = dob;
     }
 

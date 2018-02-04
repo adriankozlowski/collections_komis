@@ -15,7 +15,7 @@ public class KomisApplication {
     public List<Person> getPersonCollection() {
         try {
             return new PeopleReader()
-                    .read(new CsvFile("src/main/resource/people1.csv"));
+                    .read(new CsvFile("src/main/resources/people1.csv"));
         } catch (IOException e) {
             return new LinkedList<>();
         }
@@ -24,7 +24,7 @@ public class KomisApplication {
     public List<Vehicle> getVehiclesCollection() {
         try {
             return new VehicleReader()
-                    .read(new CsvFile("src/main/resource/vehicle.csv"));
+                    .read(new CsvFile("src/main/resources/vehicle.csv"));
         } catch (IOException e) {
             return new LinkedList<>();
         }
