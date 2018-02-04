@@ -1,5 +1,8 @@
 package pl.sda;
 
+import pl.sda.model.Person;
+import pl.sda.model.Vehicle;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -15,16 +18,9 @@ public class Main {
     public static void main(String[] args) {
 //        unZipResources();
         KomisApplication komisApplication = new KomisApplication();
-        try {
-            List<String> people = komisApplication.readFile("src/main/resources/people1.csv");
-            List<String> vehicles = komisApplication.readFile("src/main/resources/vehicle.csv");
+        List<Person> personCollection = komisApplication.getPersonCollection();
+        List<Vehicle> vehiclesCollection = komisApplication.getVehiclesCollection();
 
-            System.out.println("people size: " + people.size());
-            System.out.println("vehicle size: " + vehicles.size());
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
     /**
      * Unzip it
