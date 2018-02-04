@@ -22,11 +22,8 @@ public class Main {
 
 
         people.stream()
-                .filter(komisApplication::validatePerson)
-                .forEach(komisApplication::format);
-
-
-
+                .filter(person -> komisApplication.validatePerson(person))
+                .forEach(System.out::println);
 
     }
 

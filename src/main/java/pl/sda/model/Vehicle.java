@@ -68,36 +68,37 @@ public class Vehicle {
     }
 
     public Vehicle(CsvLine csvLine) {
-        this.id = csvLine.get(0);
-        this.vin = csvLine.get(2);
-        this.value = csvLine.get(3);
-        this.mark = csvLine.get(4);
-        this.model = csvLine.get(5);
-        this.chassis = csvLine.get(6);
-        this.typ = csvLine.get(7);
-        this.engine = csvLine.get(8);
-        this.injectionType = csvLine.get(9);
-        this.engineCode = csvLine.get(10);
-        this.productionYear = csvLine.get(11);
-        this.cylindersValves = csvLine.get(12);
-        this.volume = csvLine.get(13);
-        this.power = csvLine.get(14);
-        this.momentum = csvLine.get(15);
-        this.timing = csvLine.get(16);
-        this.exaustFilter = csvLine.get(17);
-        this.transmission = csvLine.get(18);
-        this.driveAxis = csvLine.get(19);
-        this.breaks = csvLine.get(20);
-        this.suspensionFront = csvLine.get(21);
-        this.suspensionRear = csvLine.get(22);
-        this.selfWeight = csvLine.get(23);
-        this.chassisDimension = csvLine.get(24);
-        this.trunkVolume = csvLine.get(25);
-        this.acceleration = csvLine.get(26);
-        this.vMax = csvLine.get(27);
-        this.consumption = csvLine.get(28);
-        this.tankVolume = csvLine.get(29);
-        this.powerWeightRatio = csvLine.get(30);
+        int i = 0;
+        this.id = csvLine.get(i++);
+        this.vin = csvLine.get(i++);
+        this.value = csvLine.get(i++);
+        this.mark = csvLine.get(i++);
+        this.model = csvLine.get(i++);
+        this.chassis = csvLine.get(i++);
+        this.typ = csvLine.get(i++);
+        this.engine = csvLine.get(i++);
+        this.injectionType = csvLine.get(i++);
+        this.engineCode = csvLine.get(i++);
+        this.productionYear = csvLine.get(i++);
+        this.cylindersValves = csvLine.get(i++);
+        this.volume = csvLine.get(i++);
+        this.power = csvLine.get(i++);
+        this.momentum = csvLine.get(i++);
+        this.timing = csvLine.get(i++);
+        this.exaustFilter = csvLine.get(i++);
+        this.transmission = csvLine.get(i++);
+        this.driveAxis = csvLine.get(i++);
+        this.breaks = csvLine.get(i++);
+        this.suspensionFront = csvLine.get(i++);
+        this.suspensionRear = csvLine.get(i++);
+        this.selfWeight = csvLine.get(i++);
+        this.chassisDimension = csvLine.get(i++);
+        this.trunkVolume = csvLine.get(i++);
+        this.acceleration = csvLine.get(i++);
+        this.vMax = csvLine.get(i++);
+        this.consumption = csvLine.get(i++);
+        this.tankVolume = csvLine.get(i++);
+        this.powerWeightRatio = csvLine.get(i++);
     }
 
     public String getId() {
