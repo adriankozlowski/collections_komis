@@ -22,7 +22,7 @@ public class KomisApplication {
     }
 
     public void format(Person person) {
-        System.out.printf("%10s %10s %s %s %s", person.getId(), person.getName(), person.getLastName(), person.getDob(), person.getPesel());
+        System.out.printf("%10s %10s %20s %11s %16s \n", person.getId(), person.getName(), person.getLastName(), person.getDob(), person.getPesel());
     }
 
     public List<Vehicle> getVehiclesCollection() {
@@ -34,4 +34,21 @@ public class KomisApplication {
         }
     }
 
+    public boolean validatePerson(Person person) {
+        if (person.getName().isEmpty())
+            return false;
+        if (person.getLastName().isEmpty())
+            return false;
+        if (!(person.getName().endsWith("a") && person.getSex().equals("F"))) {
+            return false;
+        }
+        if (!validatePesel(person.getPesel(), person.getDob())) {
+            return false;
+        }
+        return true;
+    }
+
+    private boolean validatePesel(String pesel, String dob) {
+        return true;
+    }
 }

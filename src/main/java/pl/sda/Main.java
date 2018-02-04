@@ -9,7 +9,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
@@ -22,9 +21,10 @@ public class Main {
 //        List<Vehicle> vehiclesCollection = komisApplication.getVehiclesCollection();
 
 
-        List<Person> ewa = people.stream()
-                .filter(person -> person.getName().equals("Ewa"))
-                .collect(Collectors.toList());
+        people.stream()
+                .filter(komisApplication::validatePerson)
+                .forEach(komisApplication::format);
+
 
 
 
